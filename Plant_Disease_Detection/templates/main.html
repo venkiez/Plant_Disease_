@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>&#127793;Main</title>
+</head>
+<style>
+        .color-box {
+            width: 400px;
+            height: 90px;
+            border: 3px solid black;
+            background-color: ;
+        }
+    </style>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning" >
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <a class="navbar-brand" href="{{ url_for('index') }}"><b>Plant Disease Classification</b></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('project_details') }}">Project Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('member_details') }}">About Us</a>
+                    </li>
+                </ul>
+            </div>
+    </nav>
+    <br>
+    <center>
+    <h1>Trained Model for detecting Plant Diseases <h1>
+    <br>
+    <h4>Upload a Leaf Image
+    </h4>
+    <br>
+    <div class="color-box">
+    <br>
+    <form id="main-form" action="{{ url_for('main') }}" method="POST" enctype="multipart/form-data">
+        <input id="file-picker" type="file" name="file" accept="image/*" >
+        <input type="submit" value="upload" id="main-button">
+    </form>
+    </div>
+    </center>
+</body>
+</html>
